@@ -8,22 +8,18 @@ const Home = () => {
   return (
     <>
       <nav className={classes.navbar}>
-        <div className={classes.navbarLeft}>
-          <Button className={classes.navbarButton} variant="contained">
-            Home
-          </Button>
-          <Button className={classes.navbarButton} variant="contained">
-            Contained
-          </Button>
-        </div>
-        <div className={classes.navbarRight}>
-          <Button className={classes.navbarButton} variant="contained">
-            Contained
-          </Button>
-          <Button className={classes.navbarLogOut} variant="contained">
-            Contained
-          </Button>
-        </div>
+        <Button className={classes.navbarButton} variant="contained">
+          Home
+        </Button>
+        <Button className={classes.navbarButton} variant="contained">
+          Contained
+        </Button>
+        <Button className={classes.navbarButton} variant="contained">
+          About us
+        </Button>
+        <Button className={classes.navbarLogOut} variant="contained">
+          Contained
+        </Button>
       </nav>
       <section className={classes.images}>
         <div className={classes.imagesLeft}>

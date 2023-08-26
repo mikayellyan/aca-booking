@@ -56,21 +56,7 @@ export const useStyles = createUseStyles({
     rowGap: "10px",
     columnGap: "10px",
   },
-  imagesLeft: {
-    display: "flex",
-    flexDirection: "column",
-    rowGap: "10px",
-    columnGap: "10px",
-  },
-  images: {
-    width: "100vw",
-    padding: "10px",
-    marginTop: "15vh",
-    display: "flex",
-    columnGap: "10px",
-    rowGap: "10px",
-    opacity: 0.75,
-  },
+
   img1: {
     height: "100px",
     width: "calc(25vw - (50px/4))",
@@ -116,19 +102,7 @@ export const useStyles = createUseStyles({
     backgroundSize: "cover",
     backgroundPosition: "center",
   },
-  navbar: {
-    display: "flex",
-    width: "100vw",
-    height: "15vh",
-    backgroundColor: "#757067",
-    columnGap: "10px",
-    rowGap: "10px",
-    padding: "10px",
-    opacity: 0.75,
-    position: "fixed",
-    top: 0,
-    zIndex: 10000,
-  },
+
   navbarButton: {
     width: "calc(25vw - (50px / 4))",
     borderRadius: "0px",
@@ -137,7 +111,6 @@ export const useStyles = createUseStyles({
       backgroundColor: "#4d4237",
     },
     fontSize: "2.5vw",
-    height: "calc(15vh - 20px)",
     boxShadow: "none",
   },
   navbarLogOut: {

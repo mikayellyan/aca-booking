@@ -129,16 +129,6 @@ export const useStyles = createUseStyles({
     top: 0,
     zIndex: 10000,
   },
-  navbarLeft: {
-    display: "flex",
-    columnGap: "10px",
-    rowGap: "10px",
-  },
-  navbarRight: {
-    display: "flex",
-    columnGap: "10px",
-    rowGap: "10px",
-  },
   navbarButton: {
     width: "calc(25vw - (50px / 4))",
     borderRadius: "0px",

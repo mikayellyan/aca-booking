@@ -1,6 +1,5 @@
 import * as React from "react";
 import { useStyles } from "../App";
-import PermIdentityIcon from "@mui/icons-material/PermIdentity";
 import LiquorOutlinedIcon from "@mui/icons-material/LiquorOutlined";
 import LocalDiningOutlinedIcon from "@mui/icons-material/LocalDiningOutlined";
 import MenuBookOutlinedIcon from "@mui/icons-material/MenuBookOutlined";

@@ -4,10 +4,7 @@ import Home from "./components/Home";
 import SignIn from "./auth/SignIn";
 import SignUp from "./auth/SignUp";
 import "./App.css";
-import restaurant4 from "./restaurant4.webp";
-import restaurant1 from "./restaurant1.webp";
-import restaurant2 from "./restaurant2.jpeg";
-import restaurant3 from "./restaurant3.png";
+
 import restaurant5 from "./restaurant5.jpeg";
 
 export const useStyles = createUseStyles({
@@ -50,58 +47,6 @@ export const useStyles = createUseStyles({
     display: "flex",
     alignItems: "center",
   },
-  imagesRight: {
-    display: "flex",
-    flexDirection: "column",
-    rowGap: "10px",
-    columnGap: "10px",
-  },
-
-  img1: {
-    height: "100px",
-    width: "calc(25vw - (50px/4))",
-    height: "calc(42.5vh - 15px)",
-    background: "white",
-    backgroundImage: `url(${restaurant1})`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-  },
-  img2: {
-    height: "100px",
-    width: "calc(25vw - (50px/4))",
-    height: "calc(42.5vh - 15px)",
-    background: "red",
-    backgroundImage: `url(${restaurant2})`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-  },
-  img3: {
-    height: "100px",
-    width: "calc(50vw - (15px))",
-    height: "calc(85vh - 20px)",
-    background: "red",
-    backgroundImage: `url(${restaurant4})`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-  },
-  img4: {
-    height: "100px",
-    width: "calc(25vw - (50px/4))",
-    height: "calc(42.5vh - 15px)",
-    background: "white",
-    backgroundImage: `url(${restaurant3})`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-  },
-  img5: {
-    height: "100px",
-    width: "calc(25vw - (50px/4))",
-    height: "calc(42.5vh - 15px)",
-    background: "red",
-    backgroundImage: `url(${restaurant5})`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-  },
 
   navbarButton: {
     width: "calc(25vw - (50px / 4))",
@@ -111,17 +56,6 @@ export const useStyles = createUseStyles({
       backgroundColor: "#4d4237",
     },
     fontSize: "2.5vw",
-    boxShadow: "none",
-  },
-  navbarLogOut: {
-    width: "calc(25vw - (50px / 4))",
-    backgroundColor: "transparent",
-    borderRadius: "0px",
-    "&:hover": {
-      backgroundColor: "#4d4237",
-    },
-    fontSize: "2.5vw",
-    height: "calc(15vh - 20px)",
     boxShadow: "none",
   },
   AboutIcon: {

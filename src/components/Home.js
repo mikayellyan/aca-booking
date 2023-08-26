@@ -7,10 +7,10 @@ const Home = () => {
   const classes = useStyles();
   return (
     <>
-      <section className={classes.navbar}>
+      <nav className={classes.navbar}>
         <div className={classes.navbarLeft}>
           <Button className={classes.navbarButton} variant="contained">
-            Contained
+            Home
           </Button>
           <Button className={classes.navbarButton} variant="contained">
             Contained
@@ -24,7 +24,7 @@ const Home = () => {
             Contained
           </Button>
         </div>
-      </section>
+      </nav>
       <section className={classes.images}>
         <div className={classes.imagesLeft}>
           <div className={classes.imageCover}>
@@ -49,7 +49,7 @@ const Home = () => {
         </div>
       </section>
       <Restaurant />
-      <AboutUs/>
+      <AboutUs />
     </>
   );
 };

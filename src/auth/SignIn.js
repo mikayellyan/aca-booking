@@ -75,7 +75,7 @@ function SignIn() {
             type="email"
             placeholder="Email"
             value={email}
-            id="email"
+            id="signInEmail"
             name="email"
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -83,7 +83,7 @@ function SignIn() {
             type="password"
             placeholder="Password"
             value={password}
-            id="password"
+            id="signInPassword"
             name="password"
             autoComplete={password}
             onChange={(e) => setPassword(e.target.value)}

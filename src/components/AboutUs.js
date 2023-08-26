@@ -5,6 +5,7 @@ import LiquorOutlinedIcon from "@mui/icons-material/LiquorOutlined";
 import LocalDiningOutlinedIcon from "@mui/icons-material/LocalDiningOutlined";
 import MenuBookOutlinedIcon from "@mui/icons-material/MenuBookOutlined";
 import DeliveryDiningOutlinedIcon from "@mui/icons-material/DeliveryDiningOutlined";
+
 const AboutUs = () => {
   let classes = useStyles();
   return (
@@ -53,8 +54,6 @@ const AboutUs = () => {
               </p>
             </div>
           </div>
-
-          
         </div>
       </section>
     </>

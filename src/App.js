@@ -148,7 +148,7 @@ export const useStyles = createUseStyles({
     },
     fontSize: "2.5vw",
     height: "calc(15vh - 20px)",
-    boxShadow:"none"
+    boxShadow: "none",
   },
   navbarLogOut: {
     width: "calc(25vw - (50px / 4))",
@@ -159,57 +159,57 @@ export const useStyles = createUseStyles({
     },
     fontSize: "2.5vw",
     height: "calc(15vh - 20px)",
-    boxShadow:"none"
-
+    boxShadow: "none",
   },
-  AboutIcon:{
-    fontSize:"8vw"
+  AboutIcon: {
+    fontSize: "8vw",
   },
-  AboutBox:{
-    width:"100vw",
-    height:"85vh",
-    display:"flex",
-    flexDirection:"column-reverse"
+  AboutBox: {
+    width: "100vw",
+    height: "85vh",
+    display: "flex",
+    flexDirection: "column-reverse",
   },
-  AboutInfos:{
-    width:"100vw",
-    display:"flex",
-    justifyContent:"center",
-    padding:"10px",
-    columnGap:"10px"
-
-
+  AboutInfos: {
+    width: "100vw",
+    display: "flex",
+    justifyContent: "center",
+    padding: "10px",
+    columnGap: "10px",
   },
-  AboutInfo:{
-    display:"flex",
-    flexDirection:'column',
-    alignItems:"center",
-    color:"#e3e1d7",
-    width:"calc(25vw - (50px / 4))",
+  AboutInfo: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    color: "#e3e1d7",
+    width: "calc(25vw - (50px / 4))",
   },
-  AboutInfoP:{
-    textAlign:"center",
-    fontSize:"1.6vw"
+  AboutInfoP: {
+    textAlign: "center",
+    fontSize: "1.6vw",
   },
-  AboutInfosLeft:{
-    display:"flex",
-    justifyContent:"center",
-    flexWrap:"wrap",
-    columnGap:"10px"
+  AboutInfosLeft: {
+    display: "flex",
+    justifyContent: "center",
+    flexWrap: "wrap",
+    columnGap: "10px",
   },
-  AboutInfosRight:{
-    display:"flex",
-    justifyContent:"center",
-    flexWrap:"wrap",
-    columnGap:"10px"
-  }
+  AboutInfosRight: {
+    display: "flex",
+    justifyContent: "center",
+    flexWrap: "wrap",
+    columnGap: "10px",
+  },
 });
 
 function App() {
-  return <><Home/>
-  <SignIn/>
-  <SignUp/>
-  </>
+  return (
+    <>
+      <Home />
+      <SignIn />
+      <SignUp />
+    </>
+  );
 }
 
 export default App;

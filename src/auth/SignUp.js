@@ -11,11 +11,12 @@ const Container = styled.div`
 `;
 
 const FormContainer = styled.div`
+  width: 430px;
   background-color: #fff;
   padding-left: 20px;
   padding-right: 20px;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   border-radius: 15px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   text-align: center;
@@ -46,8 +47,6 @@ const SignUpButton = styled.button`
 `;
 
 function SignUp() {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -69,26 +68,10 @@ function SignUp() {
         </div>
         <form onSubmit={signUp}>
           <FormControl
-            type="text"
-            placeholder="First Name"
-            value={firstName}
-            id="firstName"
-            name="firstName"
-            onChange={(e) => setFirstName(e.target.value)}
-          />
-          <FormControl
-            type="text"
-            placeholder="Last Name"
-            value={lastName}
-            id="lastName"
-            name="lastName"
-            onChange={(e) => setLastName(e.target.value)}
-          />
-          <FormControl
             type="email"
             placeholder="Email"
             value={email}
-            id="email"
+            id="signUpEmail"
             name="email"
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -96,7 +79,7 @@ function SignUp() {
             type="password"
             placeholder="Password"
             value={password}
-            id="password"
+            id="signUpPassword"
             name="password"
             autoComplete={password}
             onChange={(e) => setPassword(e.target.value)}

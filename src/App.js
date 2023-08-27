@@ -65,44 +65,14 @@ export const useStyles = createUseStyles({
     display: "flex",
     flexDirection: "column-reverse",
   },
-  AboutInfos: {
-    width: "100vw",
-    display: "flex",
-    justifyContent: "center",
-    padding: "10px",
-    columnGap: "10px",
-  },
-  AboutInfo: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    color: "#e3e1d7",
-    width: "calc(25vw - (50px / 4))",
-  },
-  AboutInfoP: {
-    textAlign: "center",
-    fontSize: "1.6vw",
-  },
-  AboutInfosLeft: {
-    display: "flex",
-    justifyContent: "center",
-    flexWrap: "wrap",
-    columnGap: "10px",
-  },
-  AboutInfosRight: {
-    display: "flex",
-    justifyContent: "center",
-    flexWrap: "wrap",
-    columnGap: "10px",
-  },
 });
 
 function App() {
   return (
     <>
       <Home />
-      <SignIn />
-      <SignUp />
+      {/* <SignIn />
+      <SignUp /> */}
     </>
   );
 }

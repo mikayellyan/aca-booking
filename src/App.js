@@ -5,8 +5,6 @@ import SignIn from "./auth/SignIn";
 import SignUp from "./auth/SignUp";
 import "./App.css";
 
-import restaurant5 from "./restaurant5.jpeg";
-
 export const useStyles = createUseStyles({
   tableWithButtons: {
     width: "calc(100vw - 20px)",

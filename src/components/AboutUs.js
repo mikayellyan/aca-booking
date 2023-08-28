@@ -102,7 +102,7 @@ const AboutUs = () => {
       <Navbar />
       <AboutBox>
         <AboutTitle>GET TO KNOW US</AboutTitle>
-        <Line></Line>
+        <Line />
         <AboutFlex>
           <AboutInfo>
             <LiquorOutlinedIcon className={classes.AboutIcon} />
@@ -113,11 +113,11 @@ const AboutUs = () => {
               seeking a memorable dining experience.
             </AboutInfoP>
           </AboutInfo>
-          <AboutImg1></AboutImg1>
+          <AboutImg1 />
         </AboutFlex>
 
         <AboutFlex>
-          <AboutImg1></AboutImg1>
+          <AboutImg1 />
           <AboutInfo>
             <LocalDiningOutlinedIcon className={classes.AboutIcon} />
             <AboutInfoP>
@@ -140,11 +140,11 @@ const AboutUs = () => {
               that complements the culinary journey.
             </AboutInfoP>
           </AboutInfo>
-          <AboutImg3></AboutImg3>
+          <AboutImg3 />
         </AboutFlex>
 
         <AboutFlex>
-          <AboutImg4></AboutImg4>
+          <AboutImg4 />
           <AboutInfo>
             <DeliveryDiningOutlinedIcon className={classes.AboutIcon} />
             <AboutInfoP>

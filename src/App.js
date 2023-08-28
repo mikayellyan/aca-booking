@@ -4,7 +4,7 @@ import Home from "./components/Home";
 import SignIn from "./auth/SignIn";
 import SignUp from "./auth/SignUp";
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import AboutUs from "./components/AboutUs";
 import restaurant4 from "./restaurant4.webp";
 import restaurant1 from "./restaurant1.webp";
@@ -161,23 +161,14 @@ export const useStyles = createUseStyles({
     fontSize: "2.5vw",
     height: "calc(15vh - 20px)",
   },
-  AboutIcon: {
-    fontSize: "6vw",
-  },
 });
 
 function App() {
   return (
-    <>
-      <Router>
-        <>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<AboutUs />} />
-          </Routes>
-        </>
-      </Router>
-    </>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/about" element={<AboutUs />} />
+    </Routes>
   );
 }
 

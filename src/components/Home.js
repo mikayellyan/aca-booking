@@ -1,9 +1,8 @@
 import * as React from "react";
-import Button from "@mui/material/Button";
 import { useStyles } from "../App";
 import Restaurant from "./Restaurant";
-import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
+import AboutUs from "./AboutUs";
 
 const Home = () => {
   const classes = useStyles();
@@ -35,6 +34,7 @@ const Home = () => {
         </div>
       </section>
       <Restaurant />
+      <AboutUs />
     </>
   );
 };

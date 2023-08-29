@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
 import { useStyles } from "../App";
+import AccountCircleTwoToneIcon from "@mui/icons-material/AccountCircleTwoTone";
 
 const Navbar = () => {
   const classes = useStyles();
@@ -24,9 +25,11 @@ const Navbar = () => {
             About Us
           </Button>
         </Link>
-        <Button className={classes.navbarLogOut} variant="contained">
-          Contained
-        </Button>
+        {/* <Button className={classes.navbarLogout} variant="contained"> */}
+        <div className={classes.iconDiv}>
+          <AccountCircleTwoToneIcon className={classes.navbarIcon} />
+        </div>
+        {/* </Button> */}
       </div>
     </section>
   );

@@ -13,10 +13,6 @@ body {
   background-color: #2e2720;
 }
 
-.clicked::after {
-  transform: scaleX(1);
-}
-
 /* @media only screen and (max-width: 600px) {
   .img1{
     height:"100px";

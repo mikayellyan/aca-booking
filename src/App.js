@@ -138,11 +138,11 @@ export const useStyles = createUseStyles({
   },
   navbarRight: {
     display: "flex",
-    columnGap: "10px",
-    rowGap: "10px",
+    columnGap: "30px",
+    rowGap: "1px",
   },
   navbarButton: {
-    width: "calc(25vw - (50px / 4))",
+    width: "calc(30vw - (50px / 4))",
     borderRadius: "0px",
     backgroundColor: "transparent",
     "&:hover": {
@@ -151,15 +151,21 @@ export const useStyles = createUseStyles({
     fontSize: "2.5vw",
     height: "calc(15vh - 20px)",
   },
-  navbarLogOut: {
-    width: "calc(25vw - (50px / 4))",
-    backgroundColor: "transparent",
-    borderRadius: "0px",
-    "&:hover": {
-      backgroundColor: "#4d4237",
-    },
-    fontSize: "2.5vw",
-    height: "calc(15vh - 20px)",
+  // navbarLogout: {
+  //   width: "calc(25vw - (50px / 4))",
+  //   backgroundColor: "transparent",
+  //   borderRadius: "0px",
+  //   "&:hover": {
+  //     backgroundColor: "#4d4237",
+  //   },
+  // fontSize: "2.5vh",
+  //   height: "calc(15vh - 20px)",
+  // },
+  iconDiv: {
+    margin: "auto",
+  },
+  navbarIcon: {
+    fontSize: "13vh",
   },
 });
 

@@ -49,6 +49,7 @@ const AboutFlex = styled.div`
   justify-content: space-around;
   padding-top: 50px;
   padding-bottom: 50px;
+  flex-direction: row-reverse;
 `;
 
 const AboutImg1 = styled.div`
@@ -95,6 +96,60 @@ const AboutImg4 = styled.div`
   border-radius: 20px;
 `;
 
+// an array of objects which will store about us info
+
+const data = [
+  {
+    MainImg: AboutImg1,
+    description: (
+      <AboutInfoP>
+        Welcome to <b>Dine Today</b>, where culinary excellence meets a warm and
+        inviting atmosphere. Nestled in the heart of <b>Yerevan</b>, our
+        restaurant is a haven for food enthusiasts seeking a memorable dining
+        experience.
+      </AboutInfoP>
+    ),
+    DescriptionImg: LiquorOutlinedIcon,
+  },
+  {
+    MainImg: AboutImg2,
+    description: (
+      <AboutInfoP>
+        Founded in <b>1997</b>, <b>Dine Today</b> was born out of a passion for
+        exceptional cuisine and a desire to create a space where flavors,
+        traditions, and innovation harmoniously coexist. What started as a
+        vision has now blossomed into a beloved culinary destination, known for
+        its dedication to quality and creativity.
+      </AboutInfoP>
+    ),
+    DescriptionImg: LocalDiningOutlinedIcon,
+  },
+  {
+    MainImg: AboutImg3,
+    description: (
+      <AboutInfoP>
+        Step into a world of refined elegance and genuine hospitality when you
+        dine with us.Our attentive staff is dedicated to ensuring your visit is
+        nothing short of exceptional, with impeccable service that complements
+        the culinary journey.
+      </AboutInfoP>
+    ),
+    DescriptionImg: MenuBookOutlinedIcon,
+  },
+  {
+    MainImg: AboutImg4,
+    description: (
+      <AboutInfoP>
+        At <b>Dine Today</b>, we understand that sometimes you want to enjoy our
+        exceptional cuisine in the comfort of your own home. That's why we offer
+        a convenient and reliable delivery service, bringing the same exquisite
+        flavors from our kitchen straight to your doorstep.
+      </AboutInfoP>
+    ),
+    DescriptionImg: DeliveryDiningOutlinedIcon,
+  },
+];
+
 const AboutUs = () => {
   let classes = useStyles();
   return (
@@ -103,59 +158,21 @@ const AboutUs = () => {
       <AboutBox>
         <AboutTitle>GET TO KNOW US</AboutTitle>
         <Line />
-        <AboutFlex>
-          <AboutInfo>
-            <LiquorOutlinedIcon className={classes.AboutIcon} />
-            <AboutInfoP>
-              Welcome to <b>Dine Today</b>, where culinary excellence meets a
-              warm and inviting atmosphere. Nestled in the heart of{" "}
-              <b>Yerevan</b>, our restaurant is a haven for food enthusiasts
-              seeking a memorable dining experience.
-            </AboutInfoP>
-          </AboutInfo>
-          <AboutImg1 />
-        </AboutFlex>
-
-        <AboutFlex>
-          <AboutImg1 />
-          <AboutInfo>
-            <LocalDiningOutlinedIcon className={classes.AboutIcon} />
-            <AboutInfoP>
-              Founded in <b>1997</b>, <b>Dine Today</b> was born out of a
-              passion for exceptional cuisine and a desire to create a space
-              where flavors, traditions, and innovation harmoniously coexist.
-              What started as a vision has now blossomed into a beloved culinary
-              destination, known for its dedication to quality and creativity.
-            </AboutInfoP>
-          </AboutInfo>
-        </AboutFlex>
-
-        <AboutFlex>
-          <AboutInfo>
-            <MenuBookOutlinedIcon className={classes.AboutIcon} fontSize="" />
-            <AboutInfoP>
-              Step into a world of refined elegance and genuine hospitality when
-              you dine with us.Our attentive staff is dedicated to ensuring your
-              visit is nothing short of exceptional, with impeccable service
-              that complements the culinary journey.
-            </AboutInfoP>
-          </AboutInfo>
-          <AboutImg3 />
-        </AboutFlex>
-
-        <AboutFlex>
-          <AboutImg4 />
-          <AboutInfo>
-            <DeliveryDiningOutlinedIcon className={classes.AboutIcon} />
-            <AboutInfoP>
-              At <b>Dine Today</b>, we understand that sometimes you want to
-              enjoy our exceptional cuisine in the comfort of your own home.
-              That's why we offer a convenient and reliable delivery service,
-              bringing the same exquisite flavors from our kitchen straight to
-              your doorstep.
-            </AboutInfoP>
-          </AboutInfo>
-        </AboutFlex>
+        {data.map(({ MainImg, description, DescriptionImg }, index) => {
+          return (
+            <AboutFlex
+              key={index}
+              className={classes.flex}
+              style={{ flexDirection: index % 2 === 0 ? "row" : "row-reverse" }}
+            >
+              <AboutInfo>
+                <DescriptionImg className={classes.AboutIcon} />
+                {description}
+              </AboutInfo>
+              <MainImg />
+            </AboutFlex>
+          );
+        })}
       </AboutBox>
     </>
   );

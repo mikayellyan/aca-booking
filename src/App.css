@@ -1,16 +1,20 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body{
+body {
   /* background-image: url("./woods.jpeg"); */
   /* background: linear-gradient(#7570672c,#75706730,#75706728),url("./woods.jpeg");  */
   /* background-position: center;
   background-attachment: fixed;
   background-size: cover; */
   background-color: #2e2720;
+}
+
+.clicked::after {
+  transform: scaleX(1);
 }
 
 /* @media only screen and (max-width: 600px) {

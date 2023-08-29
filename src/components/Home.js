@@ -2,7 +2,6 @@ import * as React from "react";
 import { useStyles } from "../App";
 import Restaurant from "./Restaurant";
 import Navbar from "./Navbar";
-import AboutUs from "./AboutUs";
 
 const Home = () => {
   const classes = useStyles();
@@ -34,7 +33,6 @@ const Home = () => {
         </div>
       </section>
       <Restaurant />
-      <AboutUs />
     </>
   );
 };

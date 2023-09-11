@@ -5,12 +5,15 @@
 }
 
 body {
-  /* background-image: url("./woods.jpeg"); */
-  /* background: linear-gradient(#7570672c,#75706730,#75706728),url("./woods.jpeg");  */
-  /* background-position: center;
+  /* background-image: url("./wallpaper.jpeg"); */
+  /* background: linear-gradient(#7570672c,#75706730,#75706728),url("./wallpaper.jpeg");  */
+  background-position: center;
   background-attachment: fixed;
-  background-size: cover; */
-  background-color: #2e2720;
+  background-size: cover;
+  /* background-color: #4b4134; */
+  background-color: #3e3833;
+  /* background-color: #815034; */
+
 }
 
 /* @media only screen and (max-width: 600px) {

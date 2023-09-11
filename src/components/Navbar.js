@@ -1,38 +1,85 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { useCallback, useState } from "react";
+import { useStyles } from "./Styles";
+import { NavLink } from "react-router-dom";
 import Button from "@mui/material/Button";
-import { useStyles } from "../App";
-import AccountCircleTwoToneIcon from "@mui/icons-material/AccountCircleTwoTone";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import IconDialog from "./IconDialog";
 
-const Navbar = () => {
+function Navbar() {
   const classes = useStyles();
+  const [openDialog, setIsOpenDialog] = useState(false);
 
+  const handleOpenDialog = () => {
+    openDialog === false ? setIsOpenDialog(true) : setIsOpenDialog(false);
+  };
+
+  const handleCloseDialog = () => {
+    setIsOpenDialog(false);
+  };
   return (
     <section className={classes.navbar}>
       <div className={classes.navbarLeft}>
-        <Link to="/">
-          <Button className={classes.navbarButton} variant="contained">
+        <NavLink
+          to="/"
+          style={({ isActive }) =>
+            isActive ? { backgroundColor: "#4d4237", borderRadius: "30px" } : {}
+          }
+        >
+          <Button
+            className={classes.navbarButton}
+            variant="contained"
+            onClick={useCallback(() => {
+              setIsOpenDialog(false);
+            }, [])}
+          >
             Home
           </Button>
-        </Link>
-        <Button className={classes.navbarButton} variant="contained">
-          Contained
-        </Button>
+        </NavLink>
+        <NavLink
+          to="/contained" // pordznakan
+          style={({ isActive }) =>
+            isActive ? { backgroundColor: "#4d4237", borderRadius: "30px" } : {}
+          }
+        >
+          <Button
+            className={classes.navbarButton}
+            variant="contained"
+            onClick={useCallback(() => {
+              setIsOpenDialog(false);
+            }, [])}
+          >
+            Contained
+          </Button>
+        </NavLink>
       </div>
       <div className={classes.navbarRight}>
-        <Link to="/about">
-          <Button className={classes.navbarButton} variant="contained">
+        <NavLink
+          to="/about"
+          style={({ isActive }) =>
+            isActive ? { backgroundColor: "#4d4237", borderRadius: "30px" } : {}
+          }
+        >
+          <Button
+            className={classes.navbarButton}
+            variant="contained"
+            onClick={useCallback(() => {
+              setIsOpenDialog(false);
+            }, [])}
+          >
             About Us
           </Button>
-        </Link>
-        {/* <Button className={classes.navbarLogout} variant="contained"> */}
-        <div className={classes.iconDiv}>
-          <AccountCircleTwoToneIcon className={classes.navbarIcon} />
+        </NavLink>
+
+        <div className={classes.iconDiv} onClick={handleOpenDialog}>
+          <AccountCircleIcon className={classes.navbarIcon} />
         </div>
-        {/* </Button> */}
+
+        {openDialog && (
+          <IconDialog open={openDialog} onClose={handleCloseDialog} />
+        )}
       </div>
     </section>
   );
-};
+}
 
 export default Navbar;

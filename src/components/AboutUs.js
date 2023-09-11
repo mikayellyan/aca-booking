@@ -1,15 +1,15 @@
 import * as React from "react";
-import { useStyles } from "../App";
+import { useStyles } from "../components/Styles";
 import LiquorOutlinedIcon from "@mui/icons-material/LiquorOutlined";
 import LocalDiningOutlinedIcon from "@mui/icons-material/LocalDiningOutlined";
 import MenuBookOutlinedIcon from "@mui/icons-material/MenuBookOutlined";
 import DeliveryDiningOutlinedIcon from "@mui/icons-material/DeliveryDiningOutlined";
-import { styled } from "styled-components";
-import about1image from "../image001.jpg";
-import about2image from "../image002.jpg";
-import about3image from "../image003.jpg";
-import about4image from "../image004.webp";
 import Navbar from "./Navbar";
+import { styled } from "styled-components";
+import about1image from "./images/image001.jpg";
+import about2image from "./images/image002.jpg";
+import about3image from "./images/image003.jpg";
+import about4image from "./images/image004.webp";
 
 const AboutBox = styled.section`
   width: 100vw;
@@ -41,7 +41,7 @@ const AboutInfo = styled.div`
 
 const AboutInfoP = styled.p`
   text-align: center;
-  font-size: 1.2vw;
+  font-size: 1.6vw;
 `;
 
 const AboutFlex = styled.div`
@@ -96,7 +96,7 @@ const AboutImg4 = styled.div`
   border-radius: 20px;
 `;
 
-// an array of objects which will store about us info
+// an array of objects which will be "about us context"
 
 const data = [
   {

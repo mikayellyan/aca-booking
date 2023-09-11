@@ -1,40 +1,52 @@
-import * as React from "react";
-import { useStyles } from "../App";
-import Restaurant from "./Restaurant";
+import { useStyles } from "./Styles";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { db } from "../firebase";
+import { collection, getDocs } from "firebase/firestore";
 import Navbar from "./Navbar";
+import Footer from "./Footer";
 
-const Home = () => {
+function Home() {
   const classes = useStyles();
+  const navigate = useNavigate();
+  const [restaurants, setRestaurants] = useState([]);
+
+  const fetchData = async () => {
+    await getDocs(collection(db, "users")).then((querySnapshot) => {
+      setRestaurants(
+        querySnapshot.docs.map((doc) => ({
+          ...doc.data(),
+          name: doc,
+        }))
+      );
+    });
+  };
+  useEffect(() => {
+    fetchData();
+    console.log(restaurants);
+  }, []);
 
   return (
     <>
       <Navbar />
       <section className={classes.images}>
-        <div className={classes.imagesLeft}>
-          <div className={classes.imageCover}>
-            <div className={classes.img1}></div>
-          </div>
-          <div className={classes.imageCover}>
-            <div className={classes.img2}></div>
-          </div>
-        </div>
-        <div>
-          <div className={classes.bigImageCover}>
-            <div className={classes.img3}></div>
-          </div>
-        </div>
-        <div className={classes.imagesRight}>
-          <div className={classes.imageCover}>
-            <div className={classes.img4}></div>
-          </div>
-          <div className={classes.imageCover}>
-            <div className={classes.img5}></div>
-          </div>
-        </div>
+        {restaurants.map(({ id, name }) => {
+          return (
+            <div
+              key={id}
+              onClick={() => {
+                navigate(`/restaurant/${id}`);
+              }}
+              className={classes.imageCover}
+            >
+              <div className={classes.img5}></div>
+            </div>
+          );
+        })}
       </section>
-      <Restaurant />
+      <Footer />
     </>
   );
-};
+}
 
 export default Home;

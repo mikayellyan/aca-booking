@@ -9,25 +9,37 @@ import Footer from "./Footer";
 function Home() {
   const classes = useStyles();
   const navigate = useNavigate();
+  const [restaurants, setRestaurants] = useState([]);
 
-  const restaurants = [
-    { id: 0, image: classes.img1, restaurantName: "HotPub" },
-    { id: 1, image: classes.img2, restaurantName: "FlavorLane" },
-    { id: 2, image: classes.img3, restaurantName: "TasteWave" },
-    { id: 3, image: classes.img4, restaurantName: "CrispCafé" },
-  ];
+  const fetchData = async () => {
+    await getDocs(collection(db, "users")).then((querySnapshot) => {
+      setRestaurants(
+        querySnapshot.docs.map((doc) => ({
+          ...doc.data(),
+          name: doc,
+        }))
+      );
+    });
+  };
+  useEffect(() => {
+    fetchData();
+    console.log(restaurants);
+  }, []);
+
   return (
     <>
       <Navbar />
       <section className={classes.images}>
-        {restaurants.map(({ id, image }) => {
+        {restaurants.map(({ id, name }) => {
           return (
             <div
               key={id}
-              onClick={() => navigate(`/restaurant/${id}`)}
+              onClick={() => {
+                navigate(`/restaurant/${id}`);
+              }}
               className={classes.imageCover}
             >
-              <div className={image}></div>
+              <div className={classes[`img${id}`]}></div>
             </div>
           );
         })}

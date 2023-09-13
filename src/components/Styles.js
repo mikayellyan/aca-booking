@@ -1,8 +1,8 @@
 import { createUseStyles } from "react-jss";
 import restaurant1 from "./images/restaurant1.webp";
 import restaurant2 from "./images/restaurant2.jpeg";
-import restaurant4 from "./images/restaurant4.webp";
-import restaurant5 from "./images/restaurant5.jpeg";
+import restaurant3 from "./images/restaurant3.webp";
+import restaurant4 from "./images/restaurant4.jpeg";
 
 export const useStyles = createUseStyles({
   tableWithButtons: {
@@ -99,23 +99,23 @@ export const useStyles = createUseStyles({
     backgroundPosition: "center",
   },
 
-  img4: {
+  img3: {
     height: "100px",
     width: "calc(50vw - (10vw/2))",
     height: "calc(85vh - (5vw))",
 
     background: "white",
-    backgroundImage: `url(${restaurant4})`,
+    backgroundImage: `url(${restaurant3})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
   },
-  img5: {
+  img4: {
     height: "100px",
     width: "calc(50vw - (10vw/2))",
     height: "calc(85vh - (5vw))",
 
     background: "red",
-    backgroundImage: `url(${restaurant5})`,
+    backgroundImage: `url(${restaurant4})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
   },

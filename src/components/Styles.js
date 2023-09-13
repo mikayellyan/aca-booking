@@ -1,9 +1,8 @@
 import { createUseStyles } from "react-jss";
-import restaurant1 from "./images/restaurant1.webp";
-import restaurant2 from "./images/restaurant2.jpeg";
-import restaurant4 from "./images/restaurant4.webp";
-import restaurant5 from "./images/restaurant5.jpeg";
-
+import image1 from "./images/image1.webp";
+import image2 from "./images/image2.jpeg";
+import image3 from "./images/image3.jpeg";
+import image4 from "./images/image4.jpeg";
 export const useStyles = createUseStyles({
   tableWithButtons: {
     width: "calc(100vw - 20px)",
@@ -79,43 +78,43 @@ export const useStyles = createUseStyles({
     rowGap: "5vw",
     opacity: 0.9,
   },
-  img1: {
+  img0: {
     height: "100px",
     width: "calc(50vw - (10vw/2))",
     height: "calc(85vh - (5vw))",
     background: "white",
-    backgroundImage: `url(${restaurant1})`,
+    backgroundImage: `url(${image1})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
   },
+  img1: {
+    height: "100px",
+    width: "calc(50vw - (10vw/2))",
+    height: "calc(85vh - (5vw))",
+
+    background: "red",
+    backgroundImage: `url(${image2})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+  },
+
   img2: {
     height: "100px",
     width: "calc(50vw - (10vw/2))",
     height: "calc(85vh - (5vw))",
 
-    background: "red",
-    backgroundImage: `url(${restaurant2})`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-  },
-
-  img4: {
-    height: "100px",
-    width: "calc(50vw - (10vw/2))",
-    height: "calc(85vh - (5vw))",
-
     background: "white",
-    backgroundImage: `url(${restaurant4})`,
+    backgroundImage: `url(${image3})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
   },
-  img5: {
+  img3: {
     height: "100px",
     width: "calc(50vw - (10vw/2))",
     height: "calc(85vh - (5vw))",
 
     background: "red",
-    backgroundImage: `url(${restaurant5})`,
+    backgroundImage: `url(${image4})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
   },

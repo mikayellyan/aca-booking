@@ -39,7 +39,7 @@ function Home() {
               }}
               className={classes.imageCover}
             >
-              <div className={classes.img5}></div>
+              <div className={classes[`img${id}`]}></div>
             </div>
           );
         })}

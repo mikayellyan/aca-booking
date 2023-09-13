@@ -1,4 +1,3 @@
-import * as React from "react";
 import Button from "@mui/material/Button";
 import { useStyles } from "./Styles";
 import PermIdentityIcon from "@mui/icons-material/PermIdentity";
@@ -6,15 +5,13 @@ import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import PushPinIcon from "@mui/icons-material/PushPin";
 import SearchIcon from "@mui/icons-material/Search";
 import { auth, db } from "../firebase";
-import { collection, getDocs } from "firebase/firestore";
-import { useEffect } from "react";
-import { useState } from "react";
-import { doc, setDoc } from "firebase/firestore";
+import { collection, getDocs, doc, setDoc } from "firebase/firestore";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import Navbar from "./Navbar";
-const Restaurant = (props) => {
-  let [currentDate, setCurrentDate] = useState("");
 
+const Restaurant = () => {
+  const [currentDate, setCurrentDate] = useState("");
   let books = {
     1: true,
     2: true,
@@ -36,18 +33,15 @@ const Restaurant = (props) => {
     18: true,
   };
 
-  // let books = [
-  //   true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,
-  // ]
-  let { asd: id } = useParams();
-  // console.log(id)
-  let [restaurants, setRestaurants] = useState([]);
+  const { id } = useParams();
+  const [restaurants, setRestaurants] = useState([]);
   const fethPost = async () => {
     await getDocs(collection(db, "users")).then((querySnapshot) => {
       const newData = querySnapshot.docs.map((doc) => ({
         ...doc.data(),
       }));
       setRestaurants(newData);
+      console.log(restaurants);
     });
   };
   useEffect(() => {
@@ -81,12 +75,12 @@ const Restaurant = (props) => {
   let restaurantsCopy = { ...restaurants[id] };
 
   const classes = useStyles();
-  let date = new Date();
-  let year = date.getFullYear();
-  let month = date.getMonth() + 1;
-  let day = date.getDate();
+  // let date = new Date();
+  // let year = date.getFullYear();
+  // let month = date.getMonth() + 1;
+  // let day = date.getDate();
   const [value, setValue] = useState("");
-  let inputOnChange = (e) => {
+  const inputOnChange = (e) => {
     setValue(e.target.value);
   };
   const f = async (value) => {

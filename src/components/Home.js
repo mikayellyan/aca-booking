@@ -5,12 +5,10 @@ import { db } from "../firebase";
 import { collection, getDocs } from "firebase/firestore";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-
 function Home() {
   const classes = useStyles();
   const navigate = useNavigate();
   const [restaurants, setRestaurants] = useState([]);
-
   const fetchData = async () => {
     await getDocs(collection(db, "users")).then((querySnapshot) => {
       setRestaurants(
@@ -25,7 +23,6 @@ function Home() {
     fetchData();
     console.log(restaurants);
   }, []);
-
   return (
     <>
       <Navbar />
@@ -37,8 +34,18 @@ function Home() {
               onClick={() => {
                 navigate(`/restaurant/${id}`);
               }}
-              className={classes.imageCover}
+              style={{ position: "relative" }}
+              className="imageCover"
             >
+              <p className={classes.imgP}>
+                {id === 0
+                  ? "Atlas"
+                  : id === 1
+                  ? "Eightbar"
+                  : id === 2
+                  ? "S & M"
+                  : "C & D"}
+              </p>
               <div className={classes[`img${id}`]}></div>
             </div>
           );
@@ -48,5 +55,4 @@ function Home() {
     </>
   );
 }
-
 export default Home;

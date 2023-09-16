@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { auth } from "../../firebase";
@@ -64,6 +64,15 @@ function SignUp(props) {
   const navigate = useNavigate();
   const location = useLocation();
   const path = props.path || "/";
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (user) {
+        navigate("/");
+      }
+    });
+    return () => unsubscribe();
+  }, [navigate]);
 
   const signUp = async (e) => {
     e.preventDefault();

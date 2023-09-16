@@ -12,16 +12,18 @@ function IconDialog({ onClose }) {
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const classes = useStyles();
+
   useEffect(() => {
-    auth.currentUser
-      ? setUsername(auth.currentUser.displayName)
-      : setUsername("Guest");
+    setUsername(auth.currentUser?.displayName || "Guest");
   }, []);
+
   const handleSignOut = () => {
-    if (auth) {
+    if (auth.currentUser) {
       signOut(auth)
         .then(() => {
           console.log("Signed out successfully");
+          setUsername("Guest");
+          onClose();
         })
         .catch((error) => {
           console.log(error);
@@ -66,6 +68,7 @@ function IconDialog({ onClose }) {
           <Button
             onClick={() => {
               handleSignOut();
+              window.location.reload();
               onClose();
             }}
           >

@@ -5,61 +5,8 @@
 }
 
 body {
-  /* background-image: url("./wallpaper.jpeg"); */
-  /* background: linear-gradient(#7570672c,#75706730,#75706728),url("./wallpaper.jpeg");  */
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
-  /* background-color: #4b4134; */
   background-color: #3e3833;
-  /* background-color: #815034; */
-
 }
-
-/* @media only screen and (max-width: 600px) {
-  .img1{
-    height:"100px";
-    width:"calc(25vw - (50px/4))";
-    height:"calc(42.5vh - 15px)";
-    background:"white";
-    backgroundImage:`url(${restaurant1})`,
-    backgroundSize:"cover";
-    backgroundPosition:"center"
-  }
-  .img2{
-    height:"100px";
-    width:"calc(25vw - (50px/4))";
-    height:"calc(42.5vh - 15px)";
-    background:"red";
-    backgroundImage:`url(${restaurant2})`,
-    backgroundSize:"cover";
-    backgroundPosition:"center"
-  }
-  .img3{
-    height:"100px";
-    width:"calc(50vw - (15px))";
-    height:"calc(85vh - 20px)";
-    background:"red";
-    backgroundImage:`url(${restaurant4})`;
-    backgroundSize:"cover";
-    backgroundPosition:"center"
-  }
-  .img4{
-    height:"100px";
-    width:"calc(25vw - (50px/4))";
-    height:"calc(42.5vh - 15px)";
-    background:"white";
-    backgroundImage:`url(${restaurant3})`;
-    backgroundSize:"cover";
-    backgroundPosition:"center"
-  }
-  .img5{
-    height:"100px";
-    width:"calc(25vw - (50px/4))";
-    height:"calc(42.5vh - 15px)";
-    background:"red";
-    backgroundImage:`url(${restaurant5})`;
-    backgroundSize:"cover";
-    backgroundPosition:"center"
-  }
-} */

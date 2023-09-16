@@ -1,8 +1,9 @@
 import { createUseStyles } from "react-jss";
-import image1 from "./images/image1.webp";
-import image2 from "./images/image2.jpeg";
-import image3 from "./images/image3.jpeg";
-import image4 from "./images/image4.jpeg";
+import restaurant1 from "./images/image1.webp";
+import restaurant2 from "./images/image2.jpeg";
+import restaurant3 from "./images/image3.jpeg";
+import restaurant4 from "./images/image4.jpeg";
+
 export const useStyles = createUseStyles({
   tableWithButtons: {
     width: "calc(100vw - 20px)",
@@ -17,10 +18,11 @@ export const useStyles = createUseStyles({
   },
   tableInput: {
     width: "calc(20vw - (20px/4))",
+    boxShadow: "13px 13px 30px 0px rgba(0,0,0,0.75)",
     height: "8vh",
     fontSize: "2.5vw",
-    backgroundColor: "#4d4237",
-    color: "#cfb6a2",
+    backgroundColor: "#4D4237",
+    color: "#CFB6A2",
     borderRadius: "5px",
     border: "none",
     paddingLeft: "5px",
@@ -30,9 +32,10 @@ export const useStyles = createUseStyles({
     width: "calc(20vw - (20px/4))",
     height: "8vh",
     fontSize: "2.5vw",
-    backgroundColor: "#4d4237",
-    color: "#cfb6a2",
+    backgroundColor: "#4D4237",
+    color: "#CFB6A2",
     borderRadius: "5px",
+    boxShadow: "13px 13px 30px 0px rgba(0,0,0,0.75)",
     "&:hover": {
       backgroundColor: "#003000",
     },
@@ -40,17 +43,16 @@ export const useStyles = createUseStyles({
   bookIcon: {
     fontSize: "2.5vw",
   },
-
   th: {
     width: "calc(25vw - (20px/4))",
-    borderBottom: "1px solid #cfb6a2",
+    borderBottom: "1px solid #CFB6A2",
     height: "12vh",
   },
   thP: {
     fontSize: "2.5vw",
     display: "flex",
     justifyContent: "center",
-    color: "#cfb6a2",
+    color: "#CFB6A2",
   },
   thI: {
     display: "flex",
@@ -83,7 +85,7 @@ export const useStyles = createUseStyles({
     width: "calc(50vw - (10vw/2))",
     height: "calc(85vh - (5vw))",
     background: "white",
-    backgroundImage: `url(${image1})`,
+    backgroundImage: `url(${restaurant1})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
   },
@@ -91,20 +93,17 @@ export const useStyles = createUseStyles({
     height: "100px",
     width: "calc(50vw - (10vw/2))",
     height: "calc(85vh - (5vw))",
-
     background: "red",
-    backgroundImage: `url(${image2})`,
+    backgroundImage: `url(${restaurant2})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
   },
-
   img2: {
     height: "100px",
     width: "calc(50vw - (10vw/2))",
     height: "calc(85vh - (5vw))",
-
     background: "white",
-    backgroundImage: `url(${image3})`,
+    backgroundImage: `url(${restaurant3})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
   },
@@ -112,24 +111,21 @@ export const useStyles = createUseStyles({
     height: "100px",
     width: "calc(50vw - (10vw/2))",
     height: "calc(85vh - (5vw))",
-
     background: "red",
-    backgroundImage: `url(${image4})`,
+    backgroundImage: `url(${restaurant4})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
   },
   imageCover: {
     borderRadius: "10%",
     boxShadow: "1px 13px 18px 0px rgba(0,0,0,0.75)",
-    // padding:"10px",
     overflow: "hidden",
   },
-
   navbar: {
     display: "flex",
     width: "100vw",
     height: "15vh",
-    // backgroundColor: "#757067",
+    boxShadow: "1px 13px 18px 0px rgba(0,0,0,0.75)",
     columnGap: "10px",
     rowGap: "10px",
     padding: "10px",
@@ -152,23 +148,12 @@ export const useStyles = createUseStyles({
     width: "calc(30vw - (50px / 4))",
     backgroundColor: "transparent",
     "&:hover": {
-      backgroundColor: "#4d4237",
+      backgroundColor: "#4D4237",
     },
     fontSize: "2.5vw",
     height: "calc(15vh - 20px)",
-    boxShadow: "none",
     borderRadius: "30px",
   },
-  // navbarLogout: {
-  //   width: "calc(25vw - (50px / 4))",
-  //   backgroundColor: "transparent",
-  //   borderRadius: "0px",
-  //   "&:hover": {
-  //     backgroundColor: "#4d4237",
-  //   },
-  // fontSize: "2.5vh",
-  //   height: "calc(15vh - 20px)",
-  // },
   iconDiv: {
     display: "flex",
     justifyContent: "center",
@@ -215,5 +200,14 @@ export const useStyles = createUseStyles({
     fontSize: "1vw",
     paddingTop: "10px",
     paddingBottom: "10px",
+  },
+  imgP: {
+    position: "absolute",
+    top: "45%",
+    left: "50%",
+    transform: "translate(-50%,-50%)",
+    zIndex: 5,
+    color: "#FFF1DE",
+    fontSize: "0vw",
   },
 });

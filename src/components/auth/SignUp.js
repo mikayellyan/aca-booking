@@ -137,7 +137,7 @@ function SignUp(props) {
             onChange={(e) => setPassword(e.target.value)}
           />
 
-          <SignUpButton type="submit" onSignUp={props.onSignUp}>
+          <SignUpButton type="submit" onClick={props.onSignUp}>
             Sign Up
           </SignUpButton>
 

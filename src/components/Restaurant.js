@@ -9,6 +9,8 @@ import { collection, getDocs, doc, setDoc } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import Navbar from "./Navbar";
+import { Dialog, DialogContent } from "@mui/material";
+import SignUp from "./auth/SignUp";
 
 const Restaurant = () => {
   const [currentDate, setCurrentDate] = useState("");
@@ -33,6 +35,7 @@ const Restaurant = () => {
     18: true,
   };
 
+  const [signInDialogOpen, setSignInDialogOpen] = useState(false);
   const { id } = useParams();
   const [restaurants, setRestaurants] = useState([]);
   const fethPost = async () => {
@@ -96,6 +99,7 @@ const Restaurant = () => {
       f(restaurantsCopy);
     } else {
       setUser(null);
+      setSignInDialogOpen(true);
     }
   };
 
@@ -538,6 +542,21 @@ const Restaurant = () => {
           </td>
         </tr>
       </table>
+      {signInDialogOpen && (
+        <Dialog
+          open={signInDialogOpen}
+          onClose={() => setSignInDialogOpen(false)}
+        >
+          <DialogContent
+            style={{ overflow: "hidden", padding: 0, position: "relative" }}
+          >
+            <SignUp
+              path={`/restaurant/${id}`}
+              onSignUp={() => setSignInDialogOpen(false)}
+            />
+          </DialogContent>
+        </Dialog>
+      )}
     </>
   );
 };

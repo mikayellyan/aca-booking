@@ -54,13 +54,17 @@ const LoginButton = styled.button`
 function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [rememberMe, setRememberMe] = useState(false);
   const navigate = useNavigate();
 
-  const signIn = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         console.log(userCredential);
+        // window.localStorage.setItem("isLoggedIn", "true");
+      })
+      .then(() => {
         navigate("/");
       })
       .catch((error) => console.error(error));
@@ -75,7 +79,7 @@ function SignIn() {
             width={"150px"}
           />
         </div>
-        <form onSubmit={signIn}>
+        <form onSubmit={handleSubmit}>
           <FormControl
             type="email"
             placeholder="Email"
@@ -95,7 +99,13 @@ function SignIn() {
           />
           <FlexDiv>
             <label>
-              <input type="checkbox" color="#815034" /> Remember Me
+              <input
+                type="checkbox"
+                checked={rememberMe}
+                onChange={() => setRememberMe(!rememberMe)}
+                color="#815034"
+              />{" "}
+              Remember Me
             </label>
             <a href="#">Forgot Password</a>
           </FlexDiv>

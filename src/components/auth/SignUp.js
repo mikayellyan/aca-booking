@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import { auth } from "../../firebase";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
 `;
 
 const FormContainer = styled.div`
@@ -47,27 +48,53 @@ const SignUpButton = styled.button`
   font-size: 17px;
 `;
 
-function SignUp() {
+const SignInLink = styled(Link)`
+  display: block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #815034;
+  font-weight: bold;
+`;
+
+function SignUp(props) {
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const location = useLocation();
+  const path = props.path || "/";
 
-  const signUp = (e) => {
+  const signUp = async (e) => {
     e.preventDefault();
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        updateProfile(userCredential.user, {
-          displayName: name,
-        });
-        navigate("/");
-      })
-      .catch((error) => console.error(error));
+    try {
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      await updateProfile(userCredential.user, {
+        displayName: `${name} ${surname}`,
+      });
+      navigate(path);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
-    <Container>
+    <Container
+      style={
+        location.pathname === "/signup"
+          ? {
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              position: "absolute",
+            }
+          : {}
+      }
+    >
       <FormContainer>
         <div>
           <img
@@ -110,7 +137,11 @@ function SignUp() {
             onChange={(e) => setPassword(e.target.value)}
           />
 
-          <SignUpButton type="submit">Sign Up</SignUpButton>
+          <SignUpButton type="submit" onSignUp={props.onSignUp}>
+            Sign Up
+          </SignUpButton>
+
+          <SignInLink to="/signin">Already have an account? Sign In</SignInLink>
         </form>
       </FormContainer>
     </Container>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { auth } from "../../firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
@@ -57,12 +57,21 @@ function SignIn() {
   const [rememberMe, setRememberMe] = useState(false);
   const navigate = useNavigate();
 
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (user) {
+        navigate("/");
+      }
+    });
+
+    return () => unsubscribe();
+  }, [navigate]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         console.log(userCredential);
-        // window.localStorage.setItem("isLoggedIn", "true");
       })
       .then(() => {
         navigate("/");
